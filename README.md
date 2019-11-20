@@ -69,7 +69,7 @@ Thanks, and please do take it for a joyride!
 ```text
 MIT License
 
-Copyright (c) 2018 Juma Allan 
+Copyright (c) 2019 Serem Timothy 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
