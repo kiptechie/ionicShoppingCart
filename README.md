@@ -30,7 +30,7 @@ The app preview  were recorded by running `ionic serve` on google chrome browser
 
   
  
- <img src="src/assets/gitImages/shppingcart.gif" alt="GIF">
+ <img src="src/assets/gitImages/ionicShoppingCart.gif" alt="GIF">
    
    
 
@@ -40,7 +40,7 @@ The app preview  were recorded by running `ionic serve` on google chrome browser
 
 ### Progressive Web App
 
-1. Un-comment [these lines](https://github.com/kiptechie/ttime/blob/d67f90d5c6f85695edd801ffd826a899d369cbad/src/index.html#L20)
+1. Un-comment [these lines](https://github.com/kiptechie/ionicShoppingCart/blob/cbbd3c1fa634282c951a77127d545b8812bf61cd/src/index.html#L20)
 2. Run `npm run ionic:build --prod`
 3. Push the `www` folder to your hosting service
 
