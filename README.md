@@ -30,7 +30,7 @@ The app preview  were recorded by a 1080p android device.
 
   
  
- <img src="src/assets/gitImages/ionicShoppingCart.gif" alt="GIF">
+ <img src="src/assets/gitImages/cart.gif" alt="GIF">
    
    
 
