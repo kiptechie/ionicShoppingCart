@@ -26,7 +26,7 @@ _Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-st
 
 ## App Preview
 
-The app preview  were recorded by running `ionic serve` on google chrome browser.
+The app preview  were recorded by a 1080p android device.
 
   
  
