@@ -11,6 +11,7 @@ export interface Product {
   providedIn: 'root'
 })
 export class CartService {
+
   data: Product[] = [
     { id: 0, name: 'Chapo Madondo', price: 50, amount: 1 },
     { id: 1, name: 'Githeri', price: 30, amount: 1 },
@@ -24,8 +25,8 @@ export class CartService {
     { id: 9, name: 'Pancakes', price: 50, amount: 1 }
   ];
 
-  private cart = [];
-  private cartItemCount = new BehaviorSubject(0);
+  public cart = [];
+  public cartItemCount = new BehaviorSubject(0);
 
   constructor() {}
 
@@ -43,7 +44,7 @@ export class CartService {
 
   addProduct(product) {
     let added = false;
-    for (let p of this.cart) {
+    for (const p of this.cart) {
       if (p.id === product.id) {
         p.amount += 1;
         added = true;
@@ -54,13 +55,14 @@ export class CartService {
       this.cart.push(product);
     }
     this.cartItemCount.next(this.cartItemCount.value + 1);
+    this.getCartItemCount();
   }
 
   decreaseProduct(product) {
-    for (let [index, p] of this.cart.entries()) {
+    for (const [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
         p.amount -= 1;
-        if (p.amount == 0) {
+        if (p.amount === 0) {
           this.cart.splice(index, 1);
         }
       }
@@ -69,11 +71,15 @@ export class CartService {
   }
 
   removeProduct(product) {
-    for (let [index, p] of this.cart.entries()) {
+    for (const [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
         this.cartItemCount.next(this.cartItemCount.value - p.amount);
         this.cart.splice(index, 1);
       }
     }
+  }
+
+  clearCart() {
+    this.cart.length = 0;
   }
 }

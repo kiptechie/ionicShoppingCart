@@ -1,18 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Ionic Shopping Cart
+      Kiptechie's Shopping Cart
     </ion-title>
   </ion-toolbar>
 </ion-header>
  
 <ion-content>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="openCart()" #cart>
-      <div class="cart-length">{{ cartItemCount | async }}</div>
-      <ion-icon name="cart" class="cart-icon"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
   <ion-list>
     <ion-card *ngFor="let p of products">
       <ion-card-header>
@@ -34,4 +28,17 @@
       </ion-card-content>
     </ion-card>
   </ion-list>
+
+  <ion-fab *ngIf="!cartIsEmpty" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openCart()" #cart>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab *ngIf="cartIsEmpty" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openEmptyCartAlert()" #cart>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

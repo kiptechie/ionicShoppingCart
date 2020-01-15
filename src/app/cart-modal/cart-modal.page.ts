@@ -38,9 +38,16 @@ export class CartModalPage implements OnInit {
   }
 
   async checkout() {
-    // Perfom M-pesa, Mastercard, PayPal or Stripe checkout process
+    // Perfom M-pesa, Mastercard, PayPal checkout process
 
-    let alert = await this.alertCtrl.create({
+    const cartCount =  this.cart.length;
+    console.log('cart item count: ' + cartCount);
+
+    this.cartService.clearCart();
+
+
+    const alert = await this.alertCtrl.create({
+      mode: 'ios',
       header: 'Thanks for your Order!',
       message: 'We will deliver your chakula as soon as possible',
       buttons: ['SAWA']
