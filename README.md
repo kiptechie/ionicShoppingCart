@@ -30,7 +30,7 @@ The app preview  was recorded by a 1080p android device.
 
   
  
- <img src="src/assets/gitImages/cart1.gif" alt="GIF">
+ <img src="gitImages/cart1.gif" alt="GIF">
    
    
 
