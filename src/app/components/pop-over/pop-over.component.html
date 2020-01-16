@@ -1,0 +1,16 @@
+<ion-list>
+  <ion-list-header>Kiptechie</ion-list-header>
+  <ion-item button  href="https://github.com/kiptechie/ionicShoppingCart">
+    <ion-icon slot="start" name="logo-github"></ion-icon>
+    <ion-label>Github Repo</ion-label>
+  </ion-item>
+  <ion-item button  href="https://kiptechie.live">
+    <ion-icon slot="start" name="briefcase"></ion-icon>
+    <ion-label>My Portfolio</ion-label>
+  </ion-item>
+  <ion-item button (click)="presentActionSheet()">
+    <ion-icon slot="start" name="call"></ion-icon>
+    <ion-label>Contact me</ion-label>
+  </ion-item>
+</ion-list>
+<ion-button expand="block" shape="round" size="small" (click)="close()">close</ion-button>

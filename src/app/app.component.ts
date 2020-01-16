@@ -40,7 +40,7 @@ export class AppComponent {
         } else {
           // console.log("exitapp");
           // this.platform.exitApp();
-          navigator[''].exitApp();
+          navigator['app'].exitApp();
         }
       });
     });

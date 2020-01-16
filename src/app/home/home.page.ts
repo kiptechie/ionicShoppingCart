@@ -1,8 +1,9 @@
 import { CartService } from './../services/cart.service';
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { ModalController, AlertController } from '@ionic/angular';
+import { ModalController, AlertController, PopoverController } from '@ionic/angular';
 import { CartModalPage } from '../cart-modal/cart-modal.page';
 import { BehaviorSubject } from 'rxjs';
+import { PopOverComponent } from '../components/pop-over/pop-over.component';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,10 @@ export class HomePage {
 
   @ViewChild('cart', {static: false, read: ElementRef})fab: ElementRef;
 
-  constructor(private cartService: CartService, private modalCtrl: ModalController, private alertDialog: AlertController) {}
+  constructor(private cartService: CartService,
+              private modalCtrl: ModalController,
+              private alertDialog: AlertController,
+              public popoverController: PopoverController) {}
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
@@ -68,5 +72,13 @@ export class HomePage {
       node.removeEventListener('animationend', handleAnimationEnd);
     }
     node.addEventListener('animationend', handleAnimationEnd);
+  }
+
+  async presentPopover() {
+    const popover = await this.popoverController.create({
+      component: PopOverComponent,
+      translucent: true,
+    });
+    return await popover.present();
   }
 }
